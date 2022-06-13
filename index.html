@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jogo do Super Mario com Javascript">
+    <meta name="keywords" content="Javascript Mario Jogo HTML CSS">
+    <meta name="author" content="Matheus Porto de Alencar">
+    <title>Super Mario</title>
+    <link rel='stylesheet' href="style/estilo.css">
+</head>
+<body>
+    <div class="game-board">
+        <img src="assets/clouds.png" alt="Nuvens" class="cloud">
+        <img src="assets/mario.gif" alt="Mario" class="Mario">
+        <img src="assets/pipe.png" alt="Cano obstáculo" class="pipe">
+        <div id="reiniciar">
+            <button onclick="restart()">Reiniciar</button>
+        </div>
+    </div>
+
+    <div class='placar'>
+        <p>Distância: 0KM</p>
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
