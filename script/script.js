@@ -88,4 +88,4 @@ function restart(){
     placar = setInterval(ponto, 1000);
 }
 addEventListener('keydown', pular)
-addEventListener('ontouchstart', pular)
+addEventListener('touchstart', pular)
