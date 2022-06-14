@@ -1,18 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 *{margin: 0; padding: 0; box-sizing: border-box;}
+body{
+    background-color: #BFBCBA;
+    font-family: 'VT323', monospace;
+}
+header{
+    text-align: center;
+    margin: 15px;
+}
 .game-board{
     width: 100%;
     height: 500px;
     margin: 0 auto;
-    border-bottom: 15px solid rgb(35, 168, 35);
+    border: 15px solid #8D878C;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
+    margin-bottom: 1%;
 }
 .pipe{
     position: absolute;
     width: 80px;
     bottom: 0;
-    animation: animacao-cano 1.1s infinite linear;
+    animation: animacao-cano 1s infinite linear;
 }
 .Mario{
     position: absolute;
@@ -28,11 +39,13 @@
     animation: animacao-pulo 0.5s ease-out;
 }
 .placar{
-    margin-top: 2%;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
     font-size: 24px;
-    width: 100%;
+    width: 50%;
     text-align: center;
+    background-color: #96A65D;
+    border: 5px solid#8D878C;
+    border-radius: 50px;
 }
 #reiniciar{ /*Restart*/
     position: absolute;
@@ -40,20 +53,25 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(000, 000, 000, 0.5);
+    background-color: rgba(150, 166, 93, 0.5);
     display: none;
     align-items: center;
     justify-content: center;
 }
 #reiniciar button{
     padding: 15px;
-    background-color: yellow;
-    border: none;
+    background-color: #96A65D;
+    transition: 0.1s;
     cursor: pointer;
 }
 #reiniciar button:hover{
     background-color: black;
-    color: yellow;
+    color: #96A65D;
+}
+#footer{
+    margin-top: 1%;
+    text-align: center;
+    font-size: 20px;
 }
 
 @keyframes animacao-cano{

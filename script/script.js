@@ -1,15 +1,22 @@
+/*Pegando contéudo do HTML*/
 const mario = document.querySelector('img.Mario');
 const cano = document.querySelector('img.pipe');
 const nuvens = document.querySelector('img.cloud');
 const pontos = document.querySelector('.placar')
 const reiniciar = document.querySelector('#reiniciar')
+const botao = document.querySelector('#botao');
+
+/*Loops de verificação e pontuação padrão*/
 var pontuacao = 0; 
 var loop = setInterval(hit, 10);
-var placar = setInterval(ponto, 1000);//A cada 1s faz um ponto 
+var placar = setInterval(ponto, 900);//A cada 0.9s faz um ponto 
 
 function pular(){ //Função pra pular
-    mario.classList.add('pulo');
-    setTimeout(voltar, 500);
+    let posicaoMario = +window.getComputedStyle(mario).bottom.replace("px", '');
+    if(posicaoMario == 0){ //Se ele já não estiver pulando
+        mario.classList.add('pulo');
+        setTimeout(voltar, 500);
+    }
 }
 
 function voltar(){ //Função pra pousar
@@ -78,14 +85,23 @@ function restart(){
     mario.style.marginLeft = '0px';
     mario.style.animation = '';
     cano.style.left = 'auto';
-    cano.style.animation = 'animacao-cano 1.1s infinite linear';
+    cano.style.animation = 'animacao-cano 1s infinite linear';
     nuvens.style.left = 'auto';
     nuvens.style.animation = 'animacao-nuvens 20s infinite linear';
     reiniciar.style.display = 'none';
     pontos.innerHTML = `<p>Distância: 0KM</p>`;
     pontuacao = 0;
     loop = setInterval(hit, 10);
-    placar = setInterval(ponto, 1000);
+    placar = setInterval(ponto, 900);
+}
+
+function Start(){
+    reiniciar.style.display = 'flex';
+    mario.style.animation = 'none';
+    cano.style.animation = 'none';
+    cano.style.left = '100%';
+    clearInterval(loop)
+    clearInterval(placar)
 }
 addEventListener('keydown', pular)
 addEventListener('touchstart', pular)

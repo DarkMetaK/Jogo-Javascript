@@ -10,20 +10,24 @@
     <title>Super Mario</title>
     <link rel='stylesheet' href="style/estilo.css">
 </head>
-<body>
-    <div class="game-board">
+<body onload="Start()">
+    <header>
+        <img src="assets/gameboy.png" alt="Logo Gameboy" width="30%">
+    </header>
+    <section class="game-board">
         <img src="assets/clouds.png" alt="Nuvens" class="cloud">
         <img src="assets/mario.gif" alt="Mario" class="Mario">
         <img src="assets/pipe.png" alt="Cano obstáculo" class="pipe">
         <div id="reiniciar">
-            <button onclick="restart()">Reiniciar</button>
+            <button onclick="restart()" id="botao">Começar</button>
         </div>
-    </div>
-
-    <div class='placar'>
+    </section>
+    <section class='placar'>
         <p>Distância: 0KM</p>
-    </div>
-
+    </section>
+    <footer id="footer">
+        <p>Desenvolvido por Matheus Porto</p>
+    </footer>
     <script src="script/script.js"></script>
 </body>
 </html>
